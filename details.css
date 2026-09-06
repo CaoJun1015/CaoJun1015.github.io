@@ -1,0 +1,16 @@
+/* Quiet interactions, with equivalent keyboard and touch access. */
+.paper-note{border:0;border-radius:0;color:var(--ink);text-align:left;font:inherit;cursor:pointer;transition:transform .22s ease,box-shadow .22s ease}
+.note-text{display:block;font:italic 20px/1.65 'Segoe Print','Bradley Hand',cursive;white-space:nowrap;margin:23px 0 8px}
+.paper-note:focus-visible{outline:2px solid var(--accent);outline-offset:7px}
+.signature{display:block}.stamp{pointer-events:none}
+.project h3>span,.text-link>span{display:inline-block;transition:transform .2s ease}
+nav a{position:relative}nav a::after{content:'';position:absolute;left:0;right:0;bottom:-5px;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+nav a:focus-visible::after{transform:scaleX(1)}
+.project:focus-visible h3>span{transform:translate(3px,-3px)}
+.section,.contact{transition:opacity .45s ease,transform .45s ease}
+.reveal-pending{opacity:0;transform:translateY(12px)}
+@media(hover:hover) and (pointer:fine){.paper-note:hover{transform:rotate(-3deg) translateY(-3px);box-shadow:3px 12px 24px #382d1728}.project:hover h3>span{transform:translate(3px,-3px)}.text-link:hover>span{transform:translate(3px,3px)}nav a:hover::after{transform:scaleX(1)}}
+.paper-note:active{transform:rotate(-5deg) translateY(1px)}
+@media(max-width:600px){.note-text{font-size:18px}nav a,footer a{min-height:44px;display:inline-flex;align-items:center}.header{align-items:center}nav{gap:4px 16px}}
+@media(prefers-reduced-motion:reduce){.paper-note,.project-cover,.project h3>span,.text-link>span,nav a::after,.section,.contact{transition:none!important}.reveal-pending{opacity:1;transform:none}.paper-note:hover,.paper-note:active{transform:rotate(-6deg)}.project:hover .project-cover,.project:hover h3>span,.project:focus-visible h3>span,.text-link:hover>span{transform:none}}
+@media print{.reveal-pending{opacity:1;transform:none}}
